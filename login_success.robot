@@ -1,12 +1,13 @@
+*** Settings ***
+Library    Selenium2Library
+Resource    ./keywords.robot
+Suite setup    Set Selenium Speed    .1s
+
 *** Test cases ***
-เปิด Browser
-    Open Browser    http://localhost:8080
-
-ใส่ username ที่ถูกต้อง
-    Input Text    username    demo
-
-ใส่ password ที่ถูกต้อง
-    Input Text    userpassword    mode
-
-ต้องเจอข้อความต้อนรับ
-    Wait Until Page Contain    Welcome!
+ล็อกอินสำเร็จ
+    เปิด Browser
+    ใส่ username demo
+    ใส่ password mode
+    กดปุ่ม LOGIN
+    ต้องเจอข้อความต้อนรับ
+    ปิด Browser
